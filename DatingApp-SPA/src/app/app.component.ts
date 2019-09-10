@@ -10,7 +10,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AppComponent implements OnInit {
   jwtHelper = new JwtHelperService();
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     const token = localStorage.getItem('token');

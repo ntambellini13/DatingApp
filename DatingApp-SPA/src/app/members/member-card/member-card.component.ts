@@ -11,7 +11,7 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
 })
 export class MemberCardComponent implements OnInit {
   @Input() user: User;
-  
+
   constructor(private authService: AuthService, private userService: UserService, private alertify: AlertifyService) { }
 
   ngOnInit() {
@@ -19,9 +19,9 @@ export class MemberCardComponent implements OnInit {
 
   sendLike(id: number) {
     this.userService.sendLike(this.authService.decodedToken.nameid, id).subscribe(data => {
-      this.alertify.success('You have like: ' + this.user.knownAs); 
+      this.alertify.success('You have liked: ' + this.user.knownAs);
     }, error => {
       this.alertify.error(error);
-    })
+    });
   }
 }
